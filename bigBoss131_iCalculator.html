@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>BigBoss Calculator</title>
+	<link rel="stylesheet" href="bigBoss131_iCalculator.css">
+</head>
+<body>
+	<div id="head">
+		<div class="theme">
+			<label>Select theme:</label>
+			<select  name="" id="select_theme" onChange="jsfunction()">
+				<option value="df" >Default</option>
+				<option value="dr">Dark</option>
+				<option value="cf">Colorful</option>
+
+			</select>
+		</div>
+
+		<table>
+			<div id="header">
+				<tr>
+					<td colspan="4"><input id = "result" type="text" name="" id = "Result"></td>
+				</tr>
+			</div>
+			<tr id="boder">
+				<tr>
+					<td><input type="button" name="" id="btn" value="1" onclick="result.value += this.value"></td>
+					<td><input type="button" name="" id="btn" value="2" onclick="result.value += this.value"></td>
+					<td><input type="button" name="" id="btn" value="3" onclick="result.value += this.value"></td>
+					<td><input type="button" name="" id="btn" value="+" onclick="result.value += this.value"></td>
+				</tr>
+				
+				<tr>
+					<td><input type="button" name="" id="btn" value="4" onclick="result.value += this.value"></td>
+					<td><input type="button" name="" id="btn" value="5" onclick="result.value += this.value"></td>
+					<td><input type="button" name="" id="btn" value="6" onclick="result.value += this.value"></td>
+					<td><input type="button" name="" id="btn" value="-" onclick="result.value += this.value"></td>
+				</tr>
+
+				<tr>
+					<td><input type="button" name="" id="btn" value="7" onclick="result.value += this.value"></td>
+					<td><input type="button" name="" id="btn" value="8" onclick="result.value += this.value"></td>
+					<td><input type="button" name="" id="btn" value="9" onclick="result.value += this.value"></td>
+					<td><input type="button" name="" id="btn" value="*" onclick="result.value += this.value"></td>
+				</tr>
+
+				<tr>
+					<td><input type="button" name="" id="btn" value="C" onclick="result.value = ''"></td>
+					<td><input type="button" name="" id="btn" value="0" onclick="result.value += this.value"></td>
+					<td><input  type="button" name="" id="btn" value="=" onclick="result.value = eval(result.value)"></td>
+					<td><input type="button" name="" id="btn" value="/" onclick="result.value += this.value"></td>
+				</tr>
+			</tr>
+	</div>
+		<script type="text/javascript">
+			function jsfunction(){
+				var theme = document.getElementById('select_theme').value;
+				
+				if(theme == "df"){
+					document.getElementById('head').style.background = "white";
+					document.getElementById('result').style.background = "white";
+					document.getElementById('result').style.color = "black";
+					document.getElementsByTagName('table')[0].style.background = "#C0C0C0";
+					document.getElementsByTagName('table')[0].style.border  = "3px solid #C0C0C0";
+
+					for(var i = 1; i < 17; i++){
+						document.getElementsByTagName('input')[i].style.background = "white";
+						document.getElementsByTagName('input')[i].style.border  = "3px solid white";
+						document.getElementsByTagName('input')[i].style.color  = "black";
+					}
+
+				}
+				
+				if(theme == "dr"){
+
+					document.getElementById('result').style.background = "blue";
+					document.getElementById('result').style.color = "white";
+
+					document.getElementById('head').style.background = "#C0C0C0";
+					document.getElementsByTagName('table')[0].style.background = "black";
+					document.getElementsByTagName('table')[0].style.border  = "3px solid white";
+					for(var i = 1; i < 17; i++){
+						document.getElementsByTagName('input')[i].style.background = "#C0C0C8";
+						document.getElementsByTagName('input')[i].style.border  = "3px solid white";
+						document.getElementsByTagName('input')[i].style.color  = "black";
+
+					}
+				}		
+
+				if(theme == "cf"){
+
+					document.getElementById('result').style.background = "#30CE31";
+					document.getElementById('result').style.color = "#FEFE02";
+					document.getElementById('boder').style.boder = "5px solid white";
+
+					document.getElementById('head').style.background = "#F6DDB4";
+					document.getElementsByTagName('table')[0].style.background = "#4268E4";
+					document.getElementsByTagName('table')[0].style.border  = "3px solid white";
+
+					for(var i = 1; i < 17; i++){
+						if(i == 1 || i == 2 || i == 3 || i == 4 || i == 9 || i == 12 || i == 10 || i == 11){
+							document.getElementsByTagName('input')[i].style.background = "#FEFE02";
+							// document.getElementsByTagName('input')[i].style.border  = "3px solid white";
+						}else{
+							document.getElementsByTagName('input')[i].style.background = "#18F1F6";
+						}
+					}
+
+					for(var i = 1; i < 17; i++){
+						if(i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 11 || i == 13 || i == 15){
+							document.getElementsByTagName('input')[i].style.color  = "red";
+						}else{
+							document.getElementsByTagName('input')[i].style.color = "blue";
+						}
+					}
+				}			
+			}
+		</script>
+
+	</table>
+</body>
+</html>

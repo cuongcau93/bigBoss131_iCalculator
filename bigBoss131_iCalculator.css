@@ -1,0 +1,35 @@
+#head{
+	width: 100%;
+	height: 1000px;
+}
+table{
+	background-color: #C0C0C0;	
+	margin: auto;
+	border:4px solid #C0C0C0;
+}
+#result{
+	width: 184px;
+	height: 42px;
+	border:2px solid #C0C0C0;
+	margin-bottom: 2px;
+	font-size: 24px;
+}
+#btn{
+	border:2px;
+	height: 42px;
+	width: 64px;
+	border-radius: 6px;
+	background-color: white;
+}
+.theme{
+	margin-left: 42%;
+	font-size: 20px;
+	padding-bottom: 20px;
+
+}
+#select_theme{
+	margin-top: 15%;
+	border-radius:5px;
+	padding: 4px;
+
+}
